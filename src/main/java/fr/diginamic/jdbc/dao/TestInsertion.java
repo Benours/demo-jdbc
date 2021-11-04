@@ -13,7 +13,6 @@ public class TestInsertion {
 		FournisseurDaoJdbc fournisseur = new FournisseurDaoJdbc();
 		List<Fournisseur> liste = fournisseur.extraire();
 		Fournisseur insert = new Fournisseur(liste.get(liste.size() - 1).getId() + 1, "La Maison du Pain");
-		System.out.println(liste.get(liste.size() - 1).getId() + 1);
 		fournisseur.insert(insert);
 //		fournisseur.insert(insertQuote);
 
