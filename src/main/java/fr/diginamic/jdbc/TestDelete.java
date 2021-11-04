@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class TestInsertion {
+public class TestDelete {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,14 +17,13 @@ public class TestInsertion {
 		try (Connection connection =  DriverManager.getConnection(url, user, pwd)) {
 			System.out.println("Connecter");
 			try (Statement state = connection.createStatement()) {
-				System.out.println("Nombre de ligne insérer : " + state.executeUpdate("INSERT INTO `fournisseur`(`NOM`) VALUES ('La Maison de la Peinture')"));
+				System.out.println("Nombre de ligne insérer : " + state.executeUpdate("DELETE FROM `fournisseur` WHERE fournisseur.NOM = 'La Maison des Peintures'"));
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
 		} catch (Exception e){
 			System.out.println(e.getMessage());
 		}
-
 
 	}
 
